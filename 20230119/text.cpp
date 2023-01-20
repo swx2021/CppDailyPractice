@@ -86,41 +86,65 @@
 
 //题目链接：https://www.nowcoder.com/practice/61e0c4069baf474db635cd492ac9ba9c?tpId=225&tqId=2368169&ru=/exam/oj&qru=/ta/primary-grammar-cpp/question-ranking&sourceUrl=%2Fexam%2Foj%3Fpage%3D1%26tab%3D%25E8%25AF%25AD%25E6%25B3%2595%25E7%25AF%2587%26topicId%3D225
 //#include<bits/stdc++.h>
-#include<iostream>
-using namespace std;
-class rectangle {
-private:
-	int length, width;
-public:
-	void set(int x, int y) {
-		length = x;
-		width = y;
-	}
-	int getlength() {
-		return length;
-	}
-	int getwidth() {
-		return width;
-	}
-	int area() {
-		return length * width;
-	}
-	void compare(rectangle a) {
-		// write your code here......
-		if (area() > a.area())
-			cout << 1 << endl;
-		else
-			cout << 0 << endl;
-	}
-};
-int main() {
-	int l1, w1, l2, w2;
-	cin >> l1 >> w1 >> l2 >> w2;
-	rectangle a, b;
-	a.set(l1, w1);
-	b.set(l2, w2);
-	a.compare(b);
-	return 0;
-}
+//#include<iostream>
+//using namespace std;
+//class rectangle {
+//private:
+//	int length, width;
+//public:
+//	void set(int x, int y) {
+//		length = x;
+//		width = y;
+//	}
+//	int getlength() {
+//		return length;
+//	}
+//	int getwidth() {
+//		return width;
+//	}
+//	int area() {
+//		return length * width;
+//	}
+//	void compare(rectangle a) {
+//		// write your code here......
+//		if (area() > a.area())
+//			cout << 1 << endl;
+//		else
+//			cout << 0 << endl;
+//	}
+//};
+//int main() {
+//	int l1, w1, l2, w2;
+//	cin >> l1 >> w1 >> l2 >> w2;
+//	rectangle a, b;
+//	a.set(l1, w1);
+//	b.set(l2, w2);
+//	a.compare(b);
+//	return 0;
+//}
 
-//怎么上传代码到github上又失败了？
+//测试代码
+int a = 0;
+int* const fun()
+{
+	return &a;
+}
+const int fun2()
+{
+	int a = 0;
+	return a;
+}
+int main()
+{
+	//const int a = 0;
+	////为什么const指针不可以赋值给非const指针
+	//int* p = fun();
+	//int b = fun2();
+	////为什么const变量可以赋值给非const变量
+	//b = a;
+	//return 0;
+	int* const p = 0;
+	int* p2 = p;
+	p2 = fun();
+	int* const p3 = fun();
+}
